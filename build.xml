@@ -319,7 +319,7 @@
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <path id="jacoco.classpath">
     <fileset dir="${jardir}">
-      <include name="jacoco-0.7.9/lib/jacocoant.jar"/>
+      <include name="jacoco/jacocoant.jar"/>
     </fileset>
   </path>
 

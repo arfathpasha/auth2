@@ -316,7 +316,6 @@
     <fail message="Test failure detected, check test results." if="test.failed" />
   </target>
 
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
   <path id="jacoco.classpath">
     <fileset dir="${jardir}">
       <include name="jacoco/jacocoant.jar"/>
@@ -396,6 +395,25 @@
           <test name="us.kbase.test.auth2.providers.GlobusIdentityProviderTest"/>
           <test name="us.kbase.test.auth2.providers.GoogleIdentityProviderTest"/>
       </junit>
+      <junit failureproperty="test.failed" fork="yes">
+        <classpath refid="test.classpath"/>
+        <formatter type="plain" usefile="false" />
+        <sysproperty key="AUTH2_TEST_CONFIG" value="${testcfg}"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageConfigTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageCustomRoleTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageDuplicateKeyCheckerTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageDisableAccountTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageGetDisplayNamesTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageInvalidDBDataTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageLinkTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStoragePasswordTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageRolesTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageStartUpTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageTempIdentitiesTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageTokensTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageUpdateUserFieldsTest"/>
+        <test name="us.kbase.test.auth2.lib.storage.mongo.MongoStorageUserCreateGetTest"/>
+      </junit>
     </jacoco:coverage>
     <fail message="Test failure detected, check test results." if="test.failed" />
     <jacoco:report>
@@ -419,7 +437,6 @@
       <xml destfile="${test.reports.dir}/report.xml"/>
     </jacoco:report>
   </target>
-  <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
   <target name="script" depends="compile" description="create cli script">
     <pathconvert targetos="unix" property="lib.classpath" refid="applicationjars"/>

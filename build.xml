@@ -409,7 +409,9 @@
           </fileset>
         </classfiles>
         <sourcefiles encoding="UTF-8">
-          <fileset dir="${src}"/>
+          <fileset dir="${src}">
+            <exclude name="**/test/**/**Test.java" />
+          </fileset>
         </sourcefiles>
       </structure>
       <html destdir="${test.reports.dir}/html"/>

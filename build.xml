@@ -417,21 +417,21 @@
       <executiondata>
         <file file="${test.reports.dir}/jacoco.exec"/>
       </executiondata>
-      <structure name="SDK">
+      <structure name="Auth2 Unit Tests">
         <classfiles>
           <fileset dir="${classes}">
-            <exclude name="**/test/**/**Test.class" />
+            <exclude name="**/test/**" />
           </fileset>
         </classfiles>
         <sourcefiles encoding="UTF-8">
           <fileset dir="${src}">
-            <exclude name="**/test/**/**Test.java" />
+            <exclude name="**/test/**" />
           </fileset>
         </sourcefiles>
       </structure>
       <html destdir="${test.reports.dir}/html"/>
       <csv destfile="${test.reports.dir}/coverage-report.csv"/>
-      <xml destfile="${test.reports.dir}/report.xml"/>
+      <xml destfile="${test.reports.dir}/coverage-report.xml"/>
     </jacoco:report>
   </target>
 

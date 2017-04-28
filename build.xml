@@ -414,6 +414,7 @@
       </structure>
       <html destdir="${test.reports.dir}/html"/>
       <csv destfile="${test.reports.dir}/coverage-report.csv"/>
+      <xml destfile="${test.reports.dir}/report.xml"/>
     </jacoco:report>
   </target>
   <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->

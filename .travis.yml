@@ -40,5 +40,5 @@ script:
 
 after_success:
     - ls docs/test-reports
-    - bash <(curl -s https://codecov.io/bash) -t d0459879-5330-46e8-af6b-547c06630ea8
+    - bash <(curl -s https://codecov.io/bash) -t d0459879-5330-46e8-af6b-547c06630ea8 -f docs/test-reports/coverage-report.xml
 

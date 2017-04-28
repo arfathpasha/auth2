@@ -324,7 +324,7 @@
 
   <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml" classpathref="jacoco.classpath"/>
 
-  <target name="test-jacoco" depends="compile" description="create test script">
+  <target name="test-report" depends="compile" description="create test script">
     <delete dir="${test.reports.dir}"/>
     <mkdir dir="${test.reports.dir}"/>
     <mkdir dir="${test.reports.dir}/html"/>
